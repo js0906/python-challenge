@@ -27,8 +27,8 @@ with open(election_csv, 'r') as csvfile:
         if (row[2] not in candidates): # if the current candidate isn't already in candidates
             candidates.append(row[2]) # add a new candidate to candidates
         
-        idx = candidates.index(row[2]) # getting index of current candidate
-        votes_won[idx] += 1 # increment votes for the current candidated by 1
+        idx = candidates.index(row[2]) 
+        votes_won[idx] += 1 
 #Calculate percentage of votes won
     percent_won = [round((votes/total_votes)*100) for votes in votes_won] # percent_won is the array that calculates the percent of total votes won for each candidate
     i = percent_won.index(max(percent_won)) # getting index of the max percentage of votes won
@@ -47,3 +47,18 @@ print("-----------------------")
 print(f"Winner: {winner}")
 
 print("-----------------------")
+
+txtpath = os.path.join("python-challenge\pypoll","Analysis.txt") 
+with open(txtpath, 'w') as txtfile:
+    txtfile.write("Election Results \n")
+    txtfile.write("----------------------- \n")
+    txtfile.write(f"Total Votes: {total_votes} \n")
+    txtfile.write("----------------------- \n")
+
+    for i in range(len(candidates)): # i is the indexes of the candidates
+        txtfile.write(f"{candidates[i]}: {percent_won[i]}% ({votes_won[i]}) \n")
+
+    txtfile.write("-----------------------\n")
+    txtfile.write(f"Winner: {winner} \n")
+
+    txtfile.write("-----------------------\n")

@@ -61,14 +61,17 @@ with open(budget_csv, 'r') as csvfile:
 
     print(f"Greatest Decrease in Profits: {decrease_month} $({greatest_decrease})")
 
+txtpath = os.path.join("python-challenge\pybank","Analysis.txt") 
+with open(txtpath, 'w') as txtfile:
+
+    txtfile.write("Financial Analysis \n")
+    txtfile.write("------------------- \n")
+    txtfile.write(f"Total Months: {total_months} \n")
+    txtfile.write(f"Total: ${total_profit_loss} \n")
+    txtfile.write(f"Average Change: {average_change} \n")
+    txtfile.write(f"Greatest Increase in Profits: {increase_month} $({greatest_increase}) \n")
+    txtfile.write(f"Greatest Decrease in Profits: {decrease_month} $({greatest_decrease}) \n")
 
 
 
 
-
-
-#Add the changes up and divide by number of lines 
-#Adding variable is total change = change + total change
-#average outside of for loop is divided by total # of 86
-#greatest increase: create two variables. One of greatest increase $ amount and greatest increase month.
-#Inside if statement after the change and added to total change, if change > greatest increase, then make greatest increase = change.
