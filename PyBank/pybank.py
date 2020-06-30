@@ -1,3 +1,8 @@
+'''PyBank Solution
+Author: Jasveen Sodhi
+Notes: This script expects the data called budget_data.csv to be in a Resources folder.
+'''
+
 import os
 import csv
 

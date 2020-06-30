@@ -1,3 +1,8 @@
+'''PyPoll Solution
+Author: Jasveen Sodhi
+Notes: This script expects the data called election_data.csv to be in a Resources folder.
+'''
+
 import os
 import csv
 
